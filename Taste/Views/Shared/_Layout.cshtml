@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     </environment>
     <environment exclude="Development">
@@ -21,6 +22,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     </environment>
 </head>
@@ -62,7 +64,7 @@
                     @if (HttpContextAccessor.HttpContext.Session.GetInt32("CartCount")!= null)
                     {
                         <li style="color:white">
-                        <a href="#" class="nav-link">
+                        <a asp-controller="Cart" asp-action="Index" class="nav-link">
                             <i class="fas fa-shopping-cart"></i>
                             &nbsp;(@HttpContextAccessor.HttpContext.Session.GetInt32("CartCount"))
                         </a>
@@ -71,7 +73,7 @@
                     }
                     else { 
                         <li style="color:white">
-                        <a href="#" class="nav-link">
+                        <a asp-controller="Cart" asp-action="Index" class="nav-link">
                             <i class="fas fa-shopping-cart"></i>
                             &nbsp;(0)
                         </a>
